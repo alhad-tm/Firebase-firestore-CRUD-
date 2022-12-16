@@ -92,6 +92,22 @@ function App() {
       >
         Update
       </button>
+
+      {/* AUTHENTICATION */}
+
+      {/* Sign in */}
+      <button
+        onClick={() => {
+          Firebase.auth()
+            .createUserWithEmailAndPassword("hari@gmail.com", "hari@12345")
+            .then((userCredential) => {
+              var user = userCredential.user;
+            });
+        }}
+      >
+        {" "}
+        auth
+      </button>
     </div>
   );
 }
